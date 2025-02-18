@@ -1,0 +1,8 @@
+1. Both the flexbox and the css grid use the parent child relationship,
+ where the container acts as the parent and all the items in the container are the children. 
+ they are also both responsible for the aligning and spacing of the items. the differnces are 
+ that flexbox is a one dimetional box while css grid is two dimetional
+
+ 2.responsive design refers to the idea that a web page can work with all devices and screen sizes
+  and there are a variety of tools that help ensure that the seb page works. such as viewports
+  media queries, etc

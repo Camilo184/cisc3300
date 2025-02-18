@@ -1,0 +1,4 @@
+﻿1. ___higher order functions____ are functions that return a function or take other functions as arguments. 2. ___functionl\al______ programming is a declarative programming paradigm style where one applies pure functions in sequence to solve complex problems 
+3. we can access object properties in JS with _dot notaion______ or ___braket notation_______ 4. Logical operators are processed left to right. They __stop short circuit ______ as soon as they have a result 
+5. _declartive_______ write code that describes what you want, but not necessarily how to get it. 6. Create a function to return true if a given string params includes the word “pinecone”, you can use the .includes builtin string function. Create an array that contains few 
+sentences at different indexes and include pinecone in at least one of them. Use the filter function to create a new array using the function you created.
