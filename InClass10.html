@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click</title>
+</head>
+<body>
+
+    <div id="myDiv" onclick="changeTextAndColor()">initial text</div>
+
+    <script>
+        function changeTextAndColor() {
+            var divElement = document.getElementById("myDiv");
+
+            divElement.textContent = "added text!";
+
+            divElement.style.backgroundColor = "yellow";
+        }
+    </script>
+
+</body>
+</html>
