@@ -1,0 +1,20 @@
+1. an interpreted lang is executed at runtime,
+while a compiled lang has to be turn into machine code by the compiler
+
+2. dynamic typed lang are checked ate runtime
+static typed lang are checked at compile time
+strongly typed lang doesnt allow implicit type convertion
+weak typed lang allow implicit type convertion
+
+3. 
+var- can be changed and redeclared
+let- can be changed but not redeclared
+const- cant be changed or redeclared
+
+4. 
+anonymous function- a function without a name.
+higher order function- functions that takes another function as an argument or returns a function
+callback function- function passed as an argument to another function and executed after an operation
+first class function- functions that are assigned to variables, passed as arguments, and can be returned from other functions
+
+5. objects are made up of values, for example properties and methods 
