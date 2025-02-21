@@ -1,0 +1,7 @@
+﻿CISC 3300 F24 
+In class assignment 11 
+1. ___jQuery____ is a lightweight, "write less, do more", JavaScript library 
+2. __jQuery_____ makes our lives easier when doing common HTML/CSS/JS tasks. 3. __ajax_____ allows web pages to be updated asynchronously by exchanging data with a web server behind the scenes. 
+4. ___HTTP____ how the internet handles communication between clients and servers, is done by requests and responses. 
+5. __JSON_____ is a text-based data format following JavaScript object syntax. 6. _______ is a way for two or more computer programs or components to communicate with each other. 
+7. Create a webpage that (using jQuery) when a button is clicked an HTTP GET request is sent to a PHP backend. From the PHP backend return an associative array that is JSON encoded. Console.log the response on the front end.
