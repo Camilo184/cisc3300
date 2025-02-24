@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<script>
+function createCounter(start) {
+    let count = start; 
+
+    return function () {
+        console.log(count); 
+        count++; 
+    };
+}
+
+const counter = createCounter(9);
+counter(); 
+counter();
+counter(); 
+
+</script>
+</head>
+
+</html>

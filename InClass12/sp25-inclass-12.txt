@@ -1,0 +1,8 @@
+﻿CISC 3300 F24 
+In class assignment 12 
+1. Code that is being run within a function is known as an _function context______ . 
+2. In JavaScript variables and functions within each execution context are created before they are executed, this is called _hoisting_______ 
+3. In each JavaScript execution context, the scope is the current execution context's variables object, plus the variables object for each parent execution context, this is called _closures________ 
+4. __encapsulation_______ in object-oriented programming (OOP) is the practice of bundling data and methods into a single unit, or class. It also involves restricting direct access to some of the data 
+5. Create a JavaScript function that makes use of variables from its parent execution context. 
+6. Create a PHP application that when a url of “/html” is accessed, some HTML code is returned and displayed. If “/json” is accessed, some JSON code is returned and displayed. Include screenshots for each page.
