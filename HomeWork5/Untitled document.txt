@@ -1,0 +1,11 @@
+﻿1. The document object model is a programming interface for web documents. It represents the page so you can change the page using javascript. The dom tree is like a hierarchy when the document element is at the top and all other elements follow
+2. An attack where the attacker injects a script into a website. They work when javascript is injected into a web page could be via links and runs then can steal information. We can prevent this by using content secuity polices which restrict the execution of the script.
+3. An event is an action that is detected by the browser such as click, submit
+4. Event listener are functions which the parameters include the type of event and the functions that is executed when the event is performed
+5. Jquery makes complex commands in javascript much easier to type in code, they also give us acces to ajax. We implement it by adding a script tag with the link to it.
+6. Ajax allows us to send and receive data without reloading the page, json is  lightweight data format that allows the for efficient exchange of data. HTTP commands include:
+Get- request data from a server
+post - sending data
+Put- updates data
+Delete- removes data
+Patch- updates a portion

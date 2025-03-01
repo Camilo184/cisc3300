@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery POST Request</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <form id="myForm">
+        <input type="text" name="name" placeholder="Enter name" required>
+        <input type="email" name="email" placeholder="Enter email" required>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="message"></div>
+    <script>
+        $("#myForm").submit(function(event) {
+            event.preventDefault();
+            $.post("index.php", $(this).serialize(), function(data) {
+                let response = JSON.parse(data);
+                $.each(data, function (key, value) {
+                            console.log(value)
+                            $('#myForm').append(`
+                              <div class="user">${value['message']}</div>
+                            `)
+                        })
+            });
+        });
+    </script>
+</body>
+</html>

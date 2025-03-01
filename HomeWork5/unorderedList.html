@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unordered List</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <ul>
+        <li style="color: red;">Item1</li>
+        <li style="color: blue;">Item2</li>
+        <li style="color: green;">Item3</li>
+    </ul>
+    <script>
+        $("li").click(function() {
+            let colors = ["purple", "black", "violet", "pink"];
+            let randomColor = colors[Math.floor(Math.random() * colors.length)]; 
+            $(this).css("color", randomColor);
+        });
+    </script>
+</body>
+</html>
