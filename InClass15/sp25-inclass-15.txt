@@ -1,0 +1,9 @@
+﻿CISC 3300 SP25 
+In class assignment 15 
+1. Several predefined variables in PHP are _superglobals______, which means they are available in all scopes throughout a script. There is no need to do global $variable; to access them within functions or methods. 
+2. When data is added to a query string at the end of a URL, the PHP interpreter adds that data to a superglobal array called _$_GET_____ so that the PHP page can access it 3. ___escaping _______ means replacing every unsafe character with an escape sequence that tells the interpreter it should interpret the character as text and not as a special character 4. ___MVC_____ is an architectural/design pattern that separates an application into three main logical components Model, View, and Controller. 
+5. _RESTfulAPI_______ is an architectural style that uses HTTP requests to access and manipulate data in a uniform and consistent way. 
+6. Create a new PHP project with the following: 
+a. Post Model Class with a method to return an associative array of posts, they should have title and description properties and some data. Put this class in a Models directory. 
+b. Posts Controller PHP class with a method that instantiates a Post model object and returns the results calling the method from 6:a to the front end. Put this class in a Controllers directory. 
+c. Create routing logic that when a GET request with a URI of /posts is made to the backend, the Posts Controller created in 6:b is called.
