@@ -1,0 +1,6 @@
+﻿CISC 3300 SP25 
+In class assignment 17 
+1. __mySQL___ is a relational database program (one of many) that uses SQL queries. It is the flavor of SQL we will be using. 
+2. A ___relational database_______ uses a structure that allows us to identify and access data in relation to another piece of data in the database, these are called relationships. 
+3. _normalization_____ avoids data duplication by using relationships 
+4. We can query our tables for result sets of our data with the ___select____ statement 5. Create a new database called cisc3300(which I would use for the rest of the course), create a new table for your fictitious company or your final project, insert some data, send a screenshot of a query returning that output.
