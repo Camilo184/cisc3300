@@ -1,0 +1,12 @@
+﻿CISC 3300 S25 
+Homework 9 
+1. What are relationships in SQL? Joins? 
+These are connections to one or many tables in a database they are accessed by foreign keys and include one to one, one to many , many to many. As well as joins
+2. How do joins and relationships interact? 
+Joins are used to retrieve data from two or more tables that are connected by relationship using a foreign key it allows data that are related to be displayed together
+3. What’s a PDO? a DSN? 
+Php data objects are to access different types of databases and is compatible with many types of sql, data source name includes information that is required to connect to a database it include the host name, database name, and username and password. 
+4. What are prepared statements? Why do we need them? 
+Its a placeholder that is sent first for the data then the actual data is added at execution, this is to prevent sql injection attacks they also increase performance. There are mainly used for security
+5. What does an .env file do? 
+Its a place to store sensitive info such as database name, login,
