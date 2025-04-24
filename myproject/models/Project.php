@@ -1,36 +1,17 @@
 <?php
 class Project {
-    // Database connection and table name
     private $conn;
-    private $table_name = "projects";
-
-    // Object properties
-    public $id;
-    public $title;
-    public $description;
-    public $image;
-    public $category;
-    public $demo_link;
-    public $code_link;
-    public $tags;
-
+    private $table_name = 'projects';
+    
     // Constructor with DB
     public function __construct($db) {
         $this->conn = $db;
     }
 
     // Read all projects
-    public function read() {
-        // Query to read all projects
-        $query = "SELECT * FROM " . $this->table_name . " ORDER BY id DESC";
-        
-        // Prepare statement
-        $stmt = $this->conn->prepare($query);
-        
-        // Execute query
-        $stmt->execute();
-        
-        return $stmt;
+    public function readAll() {
+        $stmt = $this->conn->query("SELECT * FROM {$this->table_name} ORDER BY id DESC");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     // Read projects by category

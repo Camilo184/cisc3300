@@ -1,0 +1,245 @@
+2025-04-24 04:19:35 - Request: GET /
+2025-04-24 04:20:03 - Request: GET /?name=camilo&email=cam%40example.com&message=HI
+2025-04-24 04:27:00 - Request: GET /?name=camilo&email=cam%40example.com&message=HI
+2025-04-24 04:27:00 - Checking path: /
+2025-04-24 04:27:00 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/index.html
+2025-04-24 04:27:01 - Request: GET /script.js
+2025-04-24 04:27:01 - Checking path: /script.js
+2025-04-24 04:27:01 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/script.js
+2025-04-24 04:27:48 - Request: GET /?name=camilo&email=cam%40example.com&message=hi
+2025-04-24 04:27:48 - Checking path: /
+2025-04-24 04:27:48 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/index.html
+2025-04-24 04:27:48 - Request: GET /script.js
+2025-04-24 04:27:48 - Checking path: /script.js
+2025-04-24 04:27:48 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/script.js
+2025-04-24 04:35:45 - Request: GET /?name=camilo&email=cam%40example.com&message=hello
+2025-04-24 04:35:45 - Checking path: /
+2025-04-24 04:35:45 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/index.html
+2025-04-24 04:35:45 - Request: GET /script.js
+2025-04-24 04:35:45 - Checking path: /script.js
+2025-04-24 04:35:45 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/script.js
+2025-04-24 04:36:10 - Request: GET /
+2025-04-24 04:36:10 - Checking path: /
+2025-04-24 04:36:10 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/index.html
+2025-04-24 04:36:11 - Request: GET /script.js
+2025-04-24 04:36:11 - Checking path: /script.js
+2025-04-24 04:36:11 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/script.js
+2025-04-24 04:36:42 - Request: GET /?name=camilo&email=ca%40exam.com&message=hi
+2025-04-24 04:36:42 - Checking path: /
+2025-04-24 04:36:42 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/index.html
+2025-04-24 04:36:42 - Request: GET /script.js
+2025-04-24 04:36:42 - Checking path: /script.js
+2025-04-24 04:36:42 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/script.js
+2025-04-24 04:42:03 - Request: GET /?name=camilo&email=cam%40example.com&message=hello
+2025-04-24 04:42:03 - Checking path: /
+2025-04-24 04:42:03 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/index.html
+2025-04-24 04:42:03 - Request: GET /script.js
+2025-04-24 04:42:03 - Checking path: /script.js
+2025-04-24 04:42:03 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/script.js
+2025-04-24 04:42:31 - Request: GET /?name=cami&email=ca%40exm.com&message=hi
+2025-04-24 04:42:31 - Checking path: /
+2025-04-24 04:42:31 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/index.html
+2025-04-24 04:42:31 - Request: GET /script.js
+2025-04-24 04:42:31 - Checking path: /script.js
+2025-04-24 04:42:31 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/script.js
+2025-04-24 04:50:04 - Request: GET /?name=camilo&email=ca%40exam.com&message=hi
+2025-04-24 04:50:04 - Checking path: /
+2025-04-24 04:50:04 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/index.html
+2025-04-24 04:50:04 - Request: GET /script.js
+2025-04-24 04:50:04 - Checking path: /script.js
+2025-04-24 04:50:04 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/script.js
+2025-04-24 04:50:30 - Request: GET /?name=cam&email=cam%40exp.com&message=hi
+2025-04-24 04:50:30 - Checking path: /
+2025-04-24 04:50:30 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/index.html
+2025-04-24 04:50:30 - Request: GET /script.js
+2025-04-24 04:50:30 - Checking path: /script.js
+2025-04-24 04:50:30 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/script.js
+2025-04-24 04:52:37 - Request: GET /?name=cam&email=cam%40exp.com&message=hi
+2025-04-24 04:52:37 - Checking path: /
+2025-04-24 04:52:37 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/index.html
+2025-04-24 04:52:37 - Request: GET /script.js
+2025-04-24 04:52:37 - Checking path: /script.js
+2025-04-24 04:52:37 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/script.js
+2025-04-24 04:53:43 - Request: GET /?name=cam&email=cam%40exp.com&message=hi
+2025-04-24 04:53:43 - Checking path: /
+2025-04-24 04:53:43 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/index.html
+2025-04-24 04:53:43 - Request: GET /script.js
+2025-04-24 04:53:43 - Checking path: /script.js
+2025-04-24 04:53:43 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/script.js
+2025-04-24 04:55:21 - Request: GET /?name=cam&email=cam%40exp.com&message=hi
+2025-04-24 04:55:21 - Checking path: /
+2025-04-24 04:55:21 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/index.html
+2025-04-24 04:55:21 - Request: GET /public/script.js
+2025-04-24 04:55:21 - Checking path: /public/script.js
+2025-04-24 04:55:21 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/public/script.js
+2025-04-24 04:55:52 - Request: GET /?name=cam&email=cam%40exa.cpm&message=hi
+2025-04-24 04:55:52 - Checking path: /
+2025-04-24 04:55:52 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/index.html
+2025-04-24 04:55:52 - Request: GET /public/script.js
+2025-04-24 04:55:52 - Checking path: /public/script.js
+2025-04-24 04:55:52 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/public/script.js
+2025-04-24 16:46:35 - Request: GET /
+2025-04-24 16:46:35 - Checking path: /
+2025-04-24 16:46:35 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/index.html
+2025-04-24 16:46:35 - Request: GET /css/styles.css
+2025-04-24 16:46:35 - Checking path: /css/styles.css
+2025-04-24 16:46:35 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/css/styles.css
+2025-04-24 16:46:35 - Request: GET /js/script.js
+2025-04-24 16:46:35 - Checking path: /js/script.js
+2025-04-24 16:46:35 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/js/script.js
+2025-04-24 16:48:01 - Request: GET /
+2025-04-24 16:48:01 - Checking path: /
+2025-04-24 16:48:01 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/index.html
+2025-04-24 16:48:01 - Request: GET /css/styles.css
+2025-04-24 16:48:01 - Checking path: /css/styles.css
+2025-04-24 16:48:01 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/css/styles.css
+2025-04-24 16:48:01 - Request: GET /js/script.js
+2025-04-24 16:48:01 - Checking path: /js/script.js
+2025-04-24 16:48:01 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/js/script.js
+2025-04-24 16:54:55 - Request: GET /
+2025-04-24 16:54:55 - Checking path: /
+2025-04-24 16:54:55 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/index.html
+2025-04-24 16:54:55 - Request: GET /css/styles.css
+2025-04-24 16:54:55 - Checking path: /css/styles.css
+2025-04-24 16:54:55 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/css/styles.css
+2025-04-24 16:54:55 - Request: GET /js/script.js
+2025-04-24 16:54:55 - Checking path: /js/script.js
+2025-04-24 16:54:55 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/js/script.js
+2025-04-24 17:13:03 - Request: GET /
+2025-04-24 17:13:03 - Checking path: /
+2025-04-24 17:13:03 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/index.html
+2025-04-24 17:13:03 - Request: GET /css/styles.css
+2025-04-24 17:13:03 - Checking path: /css/styles.css
+2025-04-24 17:13:03 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/css/styles.css
+2025-04-24 17:13:03 - Request: GET /js/script.js
+2025-04-24 17:13:03 - Checking path: /js/script.js
+2025-04-24 17:13:03 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/js/script.js
+2025-04-24 17:14:22 - Request: GET /
+2025-04-24 17:14:22 - Checking path: /
+2025-04-24 17:14:22 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/index.html
+2025-04-24 17:14:22 - Request: GET /css/styles.css
+2025-04-24 17:14:22 - Checking path: /css/styles.css
+2025-04-24 17:14:22 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/css/styles.css
+2025-04-24 17:14:22 - Request: GET /js/script.js
+2025-04-24 17:14:22 - Checking path: /js/script.js
+2025-04-24 17:14:22 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/js/script.js
+2025-04-24 17:14:48 - Request: GET /
+2025-04-24 17:14:48 - Checking path: /
+2025-04-24 17:14:48 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/index.html
+2025-04-24 17:14:49 - Request: GET /css/styles.css
+2025-04-24 17:14:49 - Checking path: /css/styles.css
+2025-04-24 17:14:49 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/css/styles.css
+2025-04-24 17:14:49 - Request: GET /js/script.js
+2025-04-24 17:14:49 - Checking path: /js/script.js
+2025-04-24 17:14:49 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/js/script.js
+2025-04-24 17:15:00 - Request: GET /
+2025-04-24 17:15:00 - Checking path: /
+2025-04-24 17:15:00 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/index.html
+2025-04-24 17:15:00 - Request: GET /css/styles.css
+2025-04-24 17:15:00 - Checking path: /css/styles.css
+2025-04-24 17:15:00 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/css/styles.css
+2025-04-24 17:15:00 - Request: GET /js/script.js
+2025-04-24 17:15:00 - Checking path: /js/script.js
+2025-04-24 17:15:00 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/js/script.js
+2025-04-24 17:15:09 - Request: GET /
+2025-04-24 17:15:09 - Checking path: /
+2025-04-24 17:15:09 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/index.html
+2025-04-24 17:15:09 - Request: GET /css/styles.css
+2025-04-24 17:15:09 - Checking path: /css/styles.css
+2025-04-24 17:15:09 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/css/styles.css
+2025-04-24 17:15:09 - Request: GET /js/script.js
+2025-04-24 17:15:09 - Checking path: /js/script.js
+2025-04-24 17:15:09 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/js/script.js
+2025-04-24 17:15:53 - Request: GET /
+2025-04-24 17:15:53 - Checking path: /
+2025-04-24 17:15:53 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/index.html
+2025-04-24 17:15:53 - Request: GET /css/styles.css
+2025-04-24 17:15:53 - Checking path: /css/styles.css
+2025-04-24 17:15:53 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/css/styles.css
+2025-04-24 17:15:53 - Request: GET /js/script.js
+2025-04-24 17:15:53 - Checking path: /js/script.js
+2025-04-24 17:15:53 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/js/script.js
+2025-04-24 17:15:56 - Request: GET /
+2025-04-24 17:15:56 - Checking path: /
+2025-04-24 17:15:56 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/index.html
+2025-04-24 17:15:56 - Request: GET /css/styles.css
+2025-04-24 17:15:56 - Checking path: /css/styles.css
+2025-04-24 17:15:56 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/css/styles.css
+2025-04-24 17:15:56 - Request: GET /js/script.js
+2025-04-24 17:15:56 - Checking path: /js/script.js
+2025-04-24 17:15:56 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/js/script.js
+2025-04-24 17:19:45 - Request: GET /
+2025-04-24 17:19:45 - Checking path: /
+2025-04-24 17:19:45 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/index.html
+2025-04-24 17:19:45 - Request: GET /css/styles.css
+2025-04-24 17:19:45 - Checking path: /css/styles.css
+2025-04-24 17:19:45 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/css/styles.css
+2025-04-24 17:19:45 - Request: GET /js/script.js
+2025-04-24 17:19:45 - Checking path: /js/script.js
+2025-04-24 17:19:45 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/js/script.js
+2025-04-24 17:23:59 - Request: GET /js/script.js
+2025-04-24 17:23:59 - Request: GET /css/styles.css
+2025-04-24 17:23:59 - Checking path: /js/script.js
+2025-04-24 17:23:59 - Checking path: /css/styles.css
+2025-04-24 17:23:59 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/js/script.js
+2025-04-24 17:23:59 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/css/styles.css
+2025-04-24 17:24:07 - Request: GET /api/messages/test_api_log.txt
+2025-04-24 17:24:07 - Checking path: /api/messages/test_api_log.txt
+2025-04-24 17:24:07 - Routing to messages API with method: GET
+2025-04-24 17:32:52 - Request: GET /
+2025-04-24 17:32:52 - Checking path: /
+2025-04-24 17:32:52 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/index.html
+2025-04-24 17:32:52 - Request: GET /css/styles.css
+2025-04-24 17:32:52 - Checking path: /css/styles.css
+2025-04-24 17:32:52 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/css/styles.css
+2025-04-24 17:32:52 - Request: GET /js/script.js
+2025-04-24 17:32:52 - Checking path: /js/script.js
+2025-04-24 17:32:52 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/js/script.js
+2025-04-24 17:45:31 - Request: GET /
+2025-04-24 17:45:31 - Checking path: /
+2025-04-24 17:45:31 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/index.html
+2025-04-24 17:45:31 - Request: GET /css/styles.css
+2025-04-24 17:45:31 - Checking path: /css/styles.css
+2025-04-24 17:45:31 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/css/styles.css
+2025-04-24 17:45:31 - Request: GET /js/script.js
+2025-04-24 17:45:31 - Checking path: /js/script.js
+2025-04-24 17:45:31 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/js/script.js
+2025-04-24 17:53:49 - Request: GET /
+2025-04-24 17:53:49 - Checking path: /
+2025-04-24 17:53:49 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/index.html
+2025-04-24 17:53:49 - Request: GET /css/styles.css
+2025-04-24 17:53:49 - Checking path: /css/styles.css
+2025-04-24 17:53:49 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/css/styles.css
+2025-04-24 17:53:49 - Request: GET /js/script.js
+2025-04-24 17:53:49 - Checking path: /js/script.js
+2025-04-24 17:53:49 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/js/script.js
+2025-04-24 18:12:04 - Request: GET /
+2025-04-24 18:12:04 - Checking path: /
+2025-04-24 18:12:04 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/index.html
+2025-04-24 18:12:04 - Request: GET /css/styles.css
+2025-04-24 18:12:04 - Checking path: /css/styles.css
+2025-04-24 18:12:04 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/css/styles.css
+2025-04-24 18:12:04 - Request: GET /js/script.js
+2025-04-24 18:12:04 - Checking path: /js/script.js
+2025-04-24 18:12:04 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/js/script.js
+2025-04-24 18:18:04 - Request: GET /
+2025-04-24 18:18:04 - Checking path: /
+2025-04-24 18:18:04 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/index.html
+2025-04-24 18:18:04 - Request: GET /css/styles.css
+2025-04-24 18:18:04 - Checking path: /css/styles.css
+2025-04-24 18:18:04 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/css/styles.css
+2025-04-24 18:18:04 - Request: GET /js/script.js
+2025-04-24 18:18:04 - Checking path: /js/script.js
+2025-04-24 18:18:04 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/js/script.js
+2025-04-24 18:43:19 - Request: GET /server-info/
+2025-04-24 18:43:19 - Checking path: /server-info/
+2025-04-24 18:43:19 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/server-info/
+2025-04-24 18:59:58 - Request: GET /
+2025-04-24 18:59:58 - Checking path: /
+2025-04-24 18:59:58 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/index.html
+2025-04-24 19:00:21 - Request: GET /?name=cam&email=cam%40example.com&message=hi
+2025-04-24 19:00:21 - Checking path: /
+2025-04-24 19:00:21 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/index.html
+2025-04-24 19:00:47 - Request: GET /?name=cam&email=cam%40ex.com&message=hi
+2025-04-24 19:00:47 - Checking path: /
+2025-04-24 19:00:47 - Looking for file: /Users/camilo/Desktop/classwork/cisc3300/myproject/public/index.html

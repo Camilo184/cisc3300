@@ -1,71 +1,60 @@
 <?php
 class Message {
-    // Database connection and table name
     private $conn;
     private $table_name = "messages";
 
-    // Object properties
-    public $id;
     public $name;
     public $email;
     public $message;
     public $created_at;
 
-    // Constructor with DB
     public function __construct($db) {
         $this->conn = $db;
     }
 
-    // Create message
+    public function validate() {
+        $errors = [];
+        if (empty($this->name)) $errors[] = 'Name is required';
+        if (empty($this->email)) $errors[] = 'Email is required';
+        if (empty($this->message)) $errors[] = 'Message is required';
+        return $errors;
+    }
+
     public function create() {
+        // Log for debugging
+        $logFile = __DIR__ . '/../api/messages/message_model_log.txt';
+        file_put_contents($logFile, "--------- Create Method Called ---------\n", FILE_APPEND);
+        file_put_contents($logFile, "Name: {$this->name}\n", FILE_APPEND);
+        file_put_contents($logFile, "Email: {$this->email}\n", FILE_APPEND);
+        file_put_contents($logFile, "Message: {$this->message}\n", FILE_APPEND);
+        file_put_contents($logFile, "Created At: {$this->created_at}\n", FILE_APPEND);
+        
         try {
-            // Query to insert record
-            $query = "INSERT INTO " . $this->table_name . " 
-                      SET name=:name, email=:email, message=:message, created_at=:created_at";
+            $sql = "INSERT INTO {$this->table_name} (name, email, message, created_at) VALUES (:name, :email, :message, :created_at)";
+            file_put_contents($logFile, "SQL: {$sql}\n", FILE_APPEND);
             
-            // Prepare query
-            $stmt = $this->conn->prepare($query);
+            $stmt = $this->conn->prepare($sql);
+            if (!$stmt) {
+                file_put_contents($logFile, "Prepare failed: " . implode(", ", $this->conn->errorInfo()) . "\n", FILE_APPEND);
+                return false;
+            }
             
-            // Sanitize data
-            $this->name = htmlspecialchars(strip_tags($this->name));
-            $this->email = htmlspecialchars(strip_tags($this->email));
-            $this->message = htmlspecialchars(strip_tags($this->message));
-            $this->created_at = date('Y-m-d H:i:s');
+            $stmt->bindParam(':name', $this->name);
+            $stmt->bindParam(':email', $this->email);
+            $stmt->bindParam(':message', $this->message);
+            $stmt->bindParam(':created_at', $this->created_at);
             
-            // Bind values
-            $stmt->bindParam(":name", $this->name);
-            $stmt->bindParam(":email", $this->email);
-            $stmt->bindParam(":message", $this->message);
-            $stmt->bindParam(":created_at", $this->created_at);
+            $result = $stmt->execute();
+            if (!$result) {
+                file_put_contents($logFile, "Execute failed: " . implode(", ", $stmt->errorInfo()) . "\n", FILE_APPEND);
+            } else {
+                file_put_contents($logFile, "Insert successful\n", FILE_APPEND);
+            }
             
-            // Execute query
-            return $stmt->execute();
+            return $result;
         } catch (PDOException $e) {
-            // Log the error
-            file_put_contents(__DIR__ . '/../api/messages/debug_log.txt', "Model Error: " . $e->getMessage() . "\n", FILE_APPEND);
+            file_put_contents($logFile, "Exception: " . $e->getMessage() . "\n", FILE_APPEND);
             return false;
         }
     }
-
-    // Validate message data
-    public function validate() {
-        $errors = [];
-        
-        if(empty($this->name)) {
-            $errors[] = "Name is required";
-        }
-        
-        if(empty($this->email)) {
-            $errors[] = "Email is required";
-        } elseif(!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
-            $errors[] = "Invalid email format";
-        }
-        
-        if(empty($this->message)) {
-            $errors[] = "Message is required";
-        }
-        
-        return $errors;
-    }
 }
-?>

@@ -425,3 +425,47 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+/* Add these to your styles.css file */
+
+/* Form validation styles */
+.error {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  display: block;
+}
+
+input.error, textarea.error {
+  border-color: #e74c3c;
+}
+
+#form-status {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+#form-status.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+#form-status.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
+
+.api-error {
+  text-align: center;
+  padding: 20px;
+  color: #721c24;
+  background-color: #f8d7da;
+  border-radius: 5px;
+}

@@ -1,152 +1,170 @@
 $(document).ready(function () {
-    // Mobile menu toggle
-    $('.hamburger').on('click', function () {
-        $('.nav-links').toggleClass('active');
-        $(this).toggleClass('active');
-    });
+  // Mobile menu toggle
+  $('.hamburger').on('click', function () {
+      $('.nav-links').toggleClass('active');
+      $(this).toggleClass('active');
+  });
 
-    // Fetch projects from API
-    fetchProjects();
+  // Fetch projects from API
+  fetchProjects();
 
-    // Project filtering
-    $('.filter-btn').on('click', function () {
-        const filter = $(this).data('filter');
+  // Project filtering
+  $('.filter-btn').on('click', function () {
+      const filter = $(this).data('filter');
 
-        $('.filter-btn').removeClass('active');
-        $(this).addClass('active');
+      $('.filter-btn').removeClass('active');
+      $(this).addClass('active');
 
-        if (filter === 'all') {
-            fetchProjects();
-        } else {
-            fetchProjects(filter);
-        }
-    });
+      if (filter === 'all') {
+          fetchProjects();
+      } else {
+          fetchProjects(filter);
+      }
+  });
 
-    // Contact form submission (updated)
-    $('#contact-form').on('submit', function (e) {
-        e.preventDefault();
+  // Smooth scrolling for navigation
+  $('a[href^="#"]').on('click', function (e) {
+      e.preventDefault();
+      const target = $($(this).attr('href'));
+      
+      if (target.length) {
+          $('html, body').animate({
+              scrollTop: target.offset().top - 70
+          }, 800);
+          
+          // Close mobile menu if open
+          $('.nav-links').removeClass('active');
+          $('.hamburger').removeClass('active');
+      }
+  });
 
-        // Clear previous error messages
-        $('#name-error, #email-error, #message-error').text('');
+  // Contact form submission
+  $('#contact-form').on('submit', function (e) {
+      e.preventDefault();
 
-        const name = $('#name').val().trim();
-        const email = $('#email').val().trim();
-        const message = $('#message').val().trim();
+      // Clear previous error messages
+      $('#name-error, #email-error, #message-error').text('');
+      $('#form-status').text('').removeClass('success error');
 
-        let hasError = false;
+      const name = $('#name').val().trim();
+      const email = $('#email').val().trim();
+      const message = $('#message').val().trim();
 
-        if (!name) {
-            $('#name-error').text('Please enter your name.');
-            hasError = true;
-        }
-        if (!email) {
-            $('#email-error').text('Please enter your email.');
-            hasError = true;
-        } else if (!isValidEmail(email)) {
-            $('#email-error').text('That email doesn’t look right.');
-            hasError = true;
-        }
-        if (!message) {
-            $('#message-error').text('Please enter a message.');
-            hasError = true;
-        }
+      let hasError = false;
 
-        if (hasError) return;
+      if (!name) {
+          $('#name-error').text('Please enter your name.');
+          hasError = true;
+      }
+      if (!email) {
+          $('#email-error').text('Please enter your email.');
+          hasError = true;
+      } else if (!isValidEmail(email)) {
+          $('#email-error').text('That email doesnt look right.');
+          hasError = true;
+      }
+      if (!message) {
+          $('#message-error').text('Please enter a message.');
+          hasError = true;
+      }
 
-        const formData = {
-            name,
-            email,
-            message
-        };
+      if (hasError) return;
 
-        const submitBtn = $(this).find('button[type="submit"]');
-        const originalText = submitBtn.text();
-        submitBtn.prop('disabled', true).text('Sending...');
+      const formData = {
+          name,
+          email,
+          message
+      };
 
-        $.ajax({
-            url: 'api/messages',
-            method: 'POST',
-            contentType: 'application/json',
-            data: JSON.stringify(formData),
-            success: function (res) {
-                if (res.success) {
-                    alert('Thanks! Your message has been sent.');
-                    $('#contact-form')[0].reset();
-                } else {
-                    alert('Error: ' + (res.error || 'Something went wrong.'));
-                }
-            },
-            error: function (xhr) {
-                let msg = 'Something went wrong.';
-                try {
-                    const res = JSON.parse(xhr.responseText);
-                    if (res && res.error) {
-                        msg = res.error;
-                    }
-                } catch (_) { }
-                alert('Error: ' + msg);
-            },
-            complete: function () {
-                submitBtn.prop('disabled', false).text(originalText);
-            }
-        });
-    });
+      const submitBtn = $(this).find('button[type="submit"]');
+      const originalText = submitBtn.text();
+      submitBtn.prop('disabled', true).text('Sending...');
 
-    function fetchProjects(category = null) {
-        let url = 'api/projects';
-        if (category) {
-            url += '?category=' + category;
-        }
+      $.ajax({
+          url: '/api/messages/index.php',
+          method: 'POST',
+          contentType: 'application/json',
+          data: JSON.stringify(formData),
+          success: function (res) {
+              if (res.success) {
+                  $('#form-status').text('Thanks! Your message has been sent.').addClass('success');
+                  $('#contact-form')[0].reset();
+              } else {
+                  const errorMsg = Array.isArray(res.error) ? res.error.join(', ') : (res.error || 'Something went wrong.');
+                  $('#form-status').text('Error: ' + errorMsg).addClass('error');
+              }
+          },
+          error: function (xhr) {
+              let msg = 'Something went wrong.';
+              try {
+                  const res = JSON.parse(xhr.responseText);
+                  if (res && res.error) {
+                      msg = Array.isArray(res.error) ? res.error.join(', ') : res.error;
+                  }
+              } catch (_) { }
+              $('#form-status').text('Error: ' + msg).addClass('error');
+          },
+          complete: function () {
+              submitBtn.prop('disabled', false).text(originalText);
+          }
+      });
+  });
 
-        $('#projects-container').html('<div class="loading">Loading projects</div>');
+  function fetchProjects(category = null) {
+      let url = '/api/projects';
+      if (category) {
+          url += '?category=' + category;
+      }
 
-        $.ajax({
-            url: url,
-            method: 'GET',
-            success: function (response) {
-                displayProjects(response);
-            },
-            error: function (xhr, status, error) {
-                console.error('AJAX Error:', status, error);
-                $('#projects-container').html('<div class="api-error">Error loading projects. Please try again later.</div>');
-            }
-        });
-    }
+      $('#projects-container').html('<div class="loading">Loading projects...</div>');
 
-    function displayProjects(data) {
-        const container = $('#projects-container');
-        container.empty();
+      $.ajax({
+          url: url,
+          method: 'GET',
+          success: function (response) {
+              displayProjects(response);
+          },
+          error: function (xhr, status, error) {
+              console.error('AJAX Error:', status, error);
+              $('#projects-container').html('<div class="api-error">Error loading projects. Please try again later.</div>');
+          }
+      });
+  }
 
-        if (data.records && data.records.length > 0) {
-            data.records.forEach(function (project) {
-                const tagsHtml = project.tags.map(tag => `<span>${tag}</span>`).join('');
+  function displayProjects(data) {
+      const container = $('#projects-container');
+      container.empty();
 
-                const projectHtml = `
-                    <div class="project-card" data-category="${project.category}">
-                        <img src="${project.image}" alt="${project.title}">
-                        <div class="project-info">
-                            <h3>${project.title}</h3>
-                            <p>${project.description}</p>
-                            <div class="project-tags">
-                                ${tagsHtml}
-                            </div>
-                            <div class="project-links">
-                                <a href="${project.demo_link}" class="btn btn-sm">Demo</a>
-                                <a href="${project.code_link}" class="btn btn-sm">Code</a>
-                            </div>
-                        </div>
-                    </div>
-                `;
+      if (data.records && data.records.length > 0) {
+          data.records.forEach(function (project) {
+              const tagsHtml = project.tags.map(tag => `<span>${tag}</span>`).join('');
 
-                container.append(projectHtml);
-            });
-        } else {
-            container.html('<p>No projects found.</p>');
-        }
-    }
+              const projectHtml = `
+                  <div class="project-card" data-category="${project.category}">
+                      <img src="${project.image}" alt="${project.title}">
+                      <div class="project-info">
+                          <h3>${project.title}</h3>
+                          <p>${project.description}</p>
+                          <div class="project-tags">
+                              ${tagsHtml}
+                          </div>
+                          <div class="project-links">
+                              <a href="${project.demo_link}" class="btn btn-sm" target="_blank">Demo</a>
+                              <a href="${project.code_link}" class="btn btn-sm" target="_blank">Code</a>
+                          </div>
+                      </div>
+                  </div>
+              `;
 
-    function isValidEmail(email) {
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return regex.test(email);
-    }
+              container.append(projectHtml);
+          });
+      } else {
+          container.html('<p>No projects found.</p>');
+      }
+  }
+
+  function isValidEmail(email) {
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return regex.test(email);
+  }
 });

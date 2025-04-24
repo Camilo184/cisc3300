@@ -4,13 +4,19 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
 // Include database and model files
-include_once __DIR__ . '/../../config/database.php';
-include_once __DIR__ . '/../../models/Project.php';
-include_once __DIR__ . '/../../controllers/ProjectController.php';
+require_once __DIR__ . '/../../config/database.php';
+require_once __DIR__ . '/../../models/Project.php';
+require_once __DIR__ . '/../../controllers/ProjectController.php';
 
 // Get database connection
 $database = new Database();
 $db = $database->getConnection();
+
+if (!$db) {
+    http_response_code(500);
+    echo json_encode(["success" => false, "error" => "Database connection failed"]);
+    exit;
+}
 
 // Initialize controller
 $controller = new ProjectController($db);
