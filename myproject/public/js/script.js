@@ -167,4 +167,30 @@ $(document).ready(function () {
       const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       return regex.test(email);
   }
+  function loadProjects() {
+    $.ajax({
+        url: '/api/projects',
+        method: 'GET',
+        success: function(response) {
+            if (response.success) {
+                let output = "<ul>";
+                response.projects.forEach(project => {
+                    output += `<li><strong>${project.title}</strong>: ${project.description}</li>`;
+                });
+                output += "</ul>";
+                $('#projects').html(output);
+            } else {
+                $('#projects').text("Failed to load projects.");
+            }
+        },
+        error: function() {
+            $('#projects').text("An error occurred.");
+        }
+    });
+}
+
+$(document).ready(function() {
+    loadProjects();
+});
+
 });

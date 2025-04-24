@@ -1,47 +1,15 @@
 <?php
-class ProjectController {
-    private $project;
-    
-    // Constructor
-    public function __construct($db) {
-        $this->project = new Project($db);
-    }
-    
-    // Get all projects
-    public function getAllProjects() {
-        return $this->project->readAll();
-    }
+require_once '../models/Project.php';
 
-    // Get projects by category
-    public function getProjectsByCategory($category) {
-        $stmt = $this->project->readByCategory($category);
-        $num = $stmt->rowCount();
-        
-        if($num > 0) {
-            $projects_arr = [];
-            $projects_arr["records"] = [];
-            
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                extract($row);
-                
-                $project_item = [
-                    "id" => $id,
-                    "title" => $title,
-                    "description" => $description,
-                    "image" => $image,
-                    "category" => $category,
-                    "demo_link" => $demo_link,
-                    "code_link" => $code_link,
-                    "tags" => explode(",", $tags)
-                ];
-                
-                array_push($projects_arr["records"], $project_item);
-            }
-            
-            return $projects_arr;
-        } else {
-            return ["message" => "No projects found for this category."];
-        }
-    }
+header('Content-Type: application/json');
+
+if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
+    echo json_encode(["success" => false, "error" => "Method Not Allowed"]);
+    http_response_code(405);
+    exit;
 }
+
+$project = new Project();
+$data = $project->getAllProjects();
+echo json_encode(["success" => true, "projects" => $data]);
 ?>

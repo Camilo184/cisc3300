@@ -1,9 +1,0 @@
-MessageController received data: stdClass Object
-(
-    [name] => camiilo
-    [email] => cam@ex.com
-    [message] => hi
-)
-
-Extracted values - Name: camiilo, Email: cam@ex.com, Message: hi...
-Message created successfully
