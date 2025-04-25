@@ -10,4 +10,4 @@ logs/
 .idea/
 
 node_modules/
-vendor/
+vendor//
