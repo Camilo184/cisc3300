@@ -9,13 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit;
 }
 
-// Create logs directory if it doesn't exist
-if (!file_exists(__DIR__ . '/../../logs')) {
-    mkdir(__DIR__ . '/../../logs', 0755, true);
-}
 
-// Log request method for debugging
-file_put_contents(__DIR__ . '/../../logs/debug_log.txt', "Request Method: " . $_SERVER['REQUEST_METHOD'] . "\n", FILE_APPEND);
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);

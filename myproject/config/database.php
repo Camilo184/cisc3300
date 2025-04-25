@@ -6,7 +6,6 @@ class Database {
     private $password = "root";
     public $conn;
 
-    // Get database connection
     public function getConnection() {
         $this->conn = null;
 
@@ -16,8 +15,6 @@ class Database {
             $this->conn->exec("set names utf8");
             return $this->conn;
         } catch(PDOException $exception) {
-            // Log the error
-            file_put_contents(__DIR__ . '/logs/db_errors.txt', "DB Connection Error: " . $exception->getMessage() . "\n", FILE_APPEND);
             return null;
         }
     }

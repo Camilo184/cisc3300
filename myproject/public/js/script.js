@@ -1,14 +1,11 @@
 $(document).ready(function () {
-  // Mobile menu toggle
   $('.hamburger').on('click', function () {
       $('.nav-links').toggleClass('active');
       $(this).toggleClass('active');
   });
 
-  // Fetch projects from API when page loads
   fetchProjects();
 
-  // Project filtering
   $('.filter-btn').on('click', function () {
       const filter = $(this).data('filter');
 
@@ -22,7 +19,6 @@ $(document).ready(function () {
       }
   });
 
-  // Smooth scrolling and other event handlers...
 
   function fetchProjects(category = null) {
       let url = '/api/projects';
@@ -30,7 +26,6 @@ $(document).ready(function () {
           url += '?category=' + category;
       }
 
-      // Show loading message
       $('.projects-grid').html('<div class="loading">Loading projects...</div>');
 
       $.ajax({
@@ -52,10 +47,8 @@ $(document).ready(function () {
       const container = $('.projects-grid');
       container.empty();
 
-      // Check if we have projects
       if (data.success && data.projects && data.projects.length > 0) {
           data.projects.forEach(function (project) {
-              // Split tags string into an array if it's not already
               let tagsArray = typeof project.tags === 'string' ? project.tags.split(',') : project.tags;
               const tagsHtml = tagsArray.map(tag => `<span>${tag.trim()}</span>`).join('');
 
@@ -83,13 +76,10 @@ $(document).ready(function () {
       }
   }
 
-  // Contact form submission handler...
 });
-  // Contact form submission
   $('#contact-form').on('submit', function (e) {
       e.preventDefault();
 
-      // Clear previous error messages
       $('#name-error, #email-error, #message-error').text('');
       $('#form-status').text('').removeClass('success error');
 
@@ -163,7 +153,6 @@ $(document).ready(function () {
         url += '?category=' + category;
     }
 
-    // Show loading indicator in projects grid
     $('.projects-grid').html('<div class="loading">Loading projects...</div>');
 
     $.ajax({
@@ -183,10 +172,8 @@ function displayProjects(data) {
     const container = $('.projects-grid');
     container.empty();
 
-    // Check if we have projects
     if (data.success && data.projects && data.projects.length > 0) {
         data.projects.forEach(function (project) {
-            // Split tags string into an array if it's not already
             let tagsArray = typeof project.tags === 'string' ? project.tags.split(',') : project.tags;
             const tagsHtml = tagsArray.map(tag => `<span>${tag.trim()}</span>`).join('');
 
