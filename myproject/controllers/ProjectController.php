@@ -1,15 +1,19 @@
 <?php
-require_once '../models/Project.php';
+class ProjectController {
+    private $db;
+    private $project;
 
-header('Content-Type: application/json');
+    public function __construct($db) {
+        $this->db = $db;
+        $this->project = new Project($db);
+    }
 
-if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
-    echo json_encode(["success" => false, "error" => "Method Not Allowed"]);
-    http_response_code(405);
-    exit;
+    public function getAllProjects() {
+        return ["success" => true, "projects" => $this->project->getAllProjects()];
+    }
+
+    public function getProjectsByCategory($category) {
+        return ["success" => true, "projects" => $this->project->getProjectsByCategory($category)];
+    }
 }
-
-$project = new Project();
-$data = $project->getAllProjects();
-echo json_encode(["success" => true, "projects" => $data]);
 ?>

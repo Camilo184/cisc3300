@@ -1,0 +1,14 @@
+--------- Create Method Called ---------
+Name: camilo
+Email: cam@ex.com
+Message: hi
+Created At: 2025-04-24 22:41:25
+SQL: INSERT INTO messages (name, email, message, created_at) VALUES (:name, :email, :message, :created_at)
+Insert successful
+--------- Create Method Called ---------
+Name: camilo
+Email: cam@ex.com
+Message: hi
+Created At: 2025-04-25 00:19:58
+SQL: INSERT INTO messages (name, email, message, created_at) VALUES (:name, :email, :message, :created_at)
+Insert successful

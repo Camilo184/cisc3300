@@ -18,7 +18,7 @@ if (!$db) {
     exit;
 }
 
-// Initialize controller
+// Initialize controller - UNCOMMENT THIS LINE
 $controller = new ProjectController($db);
 
 // Check if category parameter exists

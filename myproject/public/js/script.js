@@ -5,7 +5,7 @@ $(document).ready(function () {
       $(this).toggleClass('active');
   });
 
-  // Fetch projects from API
+  // Fetch projects from API when page loads
   fetchProjects();
 
   // Project filtering
@@ -22,22 +22,69 @@ $(document).ready(function () {
       }
   });
 
-  // Smooth scrolling for navigation
-  $('a[href^="#"]').on('click', function (e) {
-      e.preventDefault();
-      const target = $($(this).attr('href'));
-      
-      if (target.length) {
-          $('html, body').animate({
-              scrollTop: target.offset().top - 70
-          }, 800);
-          
-          // Close mobile menu if open
-          $('.nav-links').removeClass('active');
-          $('.hamburger').removeClass('active');
-      }
-  });
+  // Smooth scrolling and other event handlers...
 
+  function fetchProjects(category = null) {
+      let url = '/api/projects';
+      if (category) {
+          url += '?category=' + category;
+      }
+
+      // Show loading message
+      $('.projects-grid').html('<div class="loading">Loading projects...</div>');
+
+      $.ajax({
+          url: url,
+          method: 'GET',
+          success: function (response) {
+              console.log("Projects API Response:", response); // Debug log
+              displayProjects(response);
+          },
+          error: function (xhr, status, error) {
+              console.error('AJAX Error:', status, error);
+              $('.projects-grid').html('<div class="api-error">Error loading projects. Please try again later.</div>');
+          }
+      });
+  }
+
+  function displayProjects(data) {
+      console.log("Displaying projects:", data); // Debug log
+      const container = $('.projects-grid');
+      container.empty();
+
+      // Check if we have projects
+      if (data.success && data.projects && data.projects.length > 0) {
+          data.projects.forEach(function (project) {
+              // Split tags string into an array if it's not already
+              let tagsArray = typeof project.tags === 'string' ? project.tags.split(',') : project.tags;
+              const tagsHtml = tagsArray.map(tag => `<span>${tag.trim()}</span>`).join('');
+
+              const projectHtml = `
+                  <div class="project-card" data-category="${project.category}">
+                      <img src="${project.image}" alt="${project.title}">
+                      <div class="project-info">
+                          <h3>${project.title}</h3>
+                          <p>${project.description}</p>
+                          <div class="project-tags">
+                              ${tagsHtml}
+                          </div>
+                          <div class="project-links">
+                              <a href="${project.demo_link}" class="btn btn-sm" target="_blank">Demo</a>
+                              <a href="${project.code_link}" class="btn btn-sm" target="_blank">Code</a>
+                          </div>
+                      </div>
+                  </div>
+              `;
+
+              container.append(projectHtml);
+          });
+      } else {
+          container.html('<p>No projects found.</p>');
+      }
+  }
+
+  // Contact form submission handler...
+});
   // Contact form submission
   $('#contact-form').on('submit', function (e) {
       e.preventDefault();
@@ -111,86 +158,66 @@ $(document).ready(function () {
   });
 
   function fetchProjects(category = null) {
-      let url = '/api/projects';
-      if (category) {
-          url += '?category=' + category;
-      }
+    let url = '/api/projects';
+    if (category) {
+        url += '?category=' + category;
+    }
 
-      $('#projects-container').html('<div class="loading">Loading projects...</div>');
+    // Show loading indicator in projects grid
+    $('.projects-grid').html('<div class="loading">Loading projects...</div>');
 
-      $.ajax({
-          url: url,
-          method: 'GET',
-          success: function (response) {
-              displayProjects(response);
-          },
-          error: function (xhr, status, error) {
-              console.error('AJAX Error:', status, error);
-              $('#projects-container').html('<div class="api-error">Error loading projects. Please try again later.</div>');
-          }
-      });
-  }
+    $.ajax({
+        url: url,
+        method: 'GET',
+        success: function (response) {
+            displayProjects(response);
+        },
+        error: function (xhr, status, error) {
+            console.error('AJAX Error:', status, error);
+            $('.projects-grid').html('<div class="api-error">Error loading projects. Please try again later.</div>');
+        }
+    });
+}
 
-  function displayProjects(data) {
-      const container = $('#projects-container');
-      container.empty();
+function displayProjects(data) {
+    const container = $('.projects-grid');
+    container.empty();
 
-      if (data.records && data.records.length > 0) {
-          data.records.forEach(function (project) {
-              const tagsHtml = project.tags.map(tag => `<span>${tag}</span>`).join('');
+    // Check if we have projects
+    if (data.success && data.projects && data.projects.length > 0) {
+        data.projects.forEach(function (project) {
+            // Split tags string into an array if it's not already
+            let tagsArray = typeof project.tags === 'string' ? project.tags.split(',') : project.tags;
+            const tagsHtml = tagsArray.map(tag => `<span>${tag.trim()}</span>`).join('');
 
-              const projectHtml = `
-                  <div class="project-card" data-category="${project.category}">
-                      <img src="${project.image}" alt="${project.title}">
-                      <div class="project-info">
-                          <h3>${project.title}</h3>
-                          <p>${project.description}</p>
-                          <div class="project-tags">
-                              ${tagsHtml}
-                          </div>
-                          <div class="project-links">
-                              <a href="${project.demo_link}" class="btn btn-sm" target="_blank">Demo</a>
-                              <a href="${project.code_link}" class="btn btn-sm" target="_blank">Code</a>
-                          </div>
-                      </div>
-                  </div>
-              `;
+            const projectHtml = `
+                <div class="project-card" data-category="${project.category}">
+                    <img src="${project.image}" alt="${project.title}">
+                    <div class="project-info">
+                        <h3>${project.title}</h3>
+                        <p>${project.description}</p>
+                        <div class="project-tags">
+                            ${tagsHtml}
+                        </div>
+                        <div class="project-links">
+                            <a href="${project.demo_link}" class="btn btn-sm" target="_blank">Demo</a>
+                            <a href="${project.code_link}" class="btn btn-sm" target="_blank">Code</a>
+                        </div>
+                    </div>
+                </div>
+            `;
 
-              container.append(projectHtml);
-          });
-      } else {
-          container.html('<p>No projects found.</p>');
-      }
-  }
+            container.append(projectHtml);
+        });
+    } else {
+        container.html('<p>No projects found.</p>');
+    }
+}
 
   function isValidEmail(email) {
       const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       return regex.test(email);
   }
-  function loadProjects() {
-    $.ajax({
-        url: '/api/projects',
-        method: 'GET',
-        success: function(response) {
-            if (response.success) {
-                let output = "<ul>";
-                response.projects.forEach(project => {
-                    output += `<li><strong>${project.title}</strong>: ${project.description}</li>`;
-                });
-                output += "</ul>";
-                $('#projects').html(output);
-            } else {
-                $('#projects').text("Failed to load projects.");
-            }
-        },
-        error: function() {
-            $('#projects').text("An error occurred.");
-        }
-    });
-}
+  
 
-$(document).ready(function() {
-    loadProjects();
-});
-
-});
+;
